@@ -9,8 +9,11 @@ import { StarWarsService } from "../star-wars.service";
 export class TabsComponent implements OnInit {
   characters = [];
   chosenList = "all";
+  swService: StarWarsService;
 
-  constructor() {}
+  constructor(swService: StarWarsService) {
+    this.swService = swService;
+  }
 
   ngOnInit() {}
 
@@ -19,8 +22,7 @@ export class TabsComponent implements OnInit {
   }
 
   getCharacters() {
-    const swService = new StarWarsService();
-    this.characters = swService.getCharacters(this.chosenList);
+    this.characters = this.swService.getCharacters(this.chosenList);
     return this.characters;
   }
 }
