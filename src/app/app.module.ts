@@ -6,11 +6,12 @@ import { TabsComponent } from "./tabs/tabs.component";
 import { ItemComponent } from "./item/item.component";
 import { ListComponent } from "./list/list.component";
 import { StarWarsService } from "./star-wars.service";
+import { LogService } from "./log.service";
 
 @NgModule({
   declarations: [AppComponent, TabsComponent, ItemComponent, ListComponent],
   imports: [BrowserModule],
-  providers: [StarWarsService],
+  providers: [StarWarsService, LogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
